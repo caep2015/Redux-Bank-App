@@ -1,17 +1,17 @@
-// React imports
+//React imports
 import React, {Component} from 'react'
-// Redux imports
+//Redux imports
 import {connect} from 'react-redux'
 import {selectUser} from '../actions/index.js'
 import { bindActionCreators } from 'redux'
-// react router imports
+//react router imports
 import { Link } from 'react-router-dom'
 
 class UserList extends Component {
-  render () {
+  render() {
     let users = this.props.users.map((user) => {
       return (
-        <li key={user._id} className='list-group-item' onClick={() => this.props.selectUser(user)}>
+        <li key={user._id} className="list-group-item" onClick={() => this.props.selectUser(user._id)}>
           <Link to={`/users/${user._id}`}>{user.name}</Link>
         </li>
       )
@@ -27,15 +27,14 @@ class UserList extends Component {
   }
 }
 
-function mapStateToProps (state) {
-  console.log('userList state', state)
-  return {users: state.users}
+function mapStateToProps(state) {
+    return {users: state.users}
 }
 
-function mapDispatchToProps (dispatch) {
-  return bindActionCreators({
-    selectUser: selectUser
-  }, dispatch)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        selectUser: selectUser
+    }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList)
