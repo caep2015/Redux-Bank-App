@@ -1,9 +1,9 @@
 # Redux-Bank-App
 The Iron Yard Weekly Project: Redux Bank App
-https://tiy-learn-content.s3.amazonaws.com/da693155-bankappfinal.gif
 
 Create an application using React, React Router v4, and Redux to mimic online banking.
 Demo of app functonality:
+
 ![App Demo](src/bankappdemo.gif "demo")
 
 * For this project, please download the following files:
